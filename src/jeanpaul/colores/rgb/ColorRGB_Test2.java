@@ -42,7 +42,7 @@ public class ColorRGB_Test2
 			listaColores4.add(colorBlanco);
 			listaColores4.add(colorNegro);
 
-			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("assets\\images\\Foto-7.jpg"));
+			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("assets\\images\\Foto-8.jpg"));
 
 			int wEntrada = imagenEntrada.getWidth();
 			System.out.println("wEntrada" + " = " + wEntrada);
