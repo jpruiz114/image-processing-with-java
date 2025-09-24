@@ -1,6 +1,6 @@
 # Image Processing with Java
 
-A Java-based image processing project that specializes in **color quantization** and artistic image transformations. This project reduces the number of colors in images by mapping pixels to predefined color palettes, creating stylized and artistic effects.
+A Java-based image processing project that specializes in **color quantization** and artistic image transformations. This project reduces the number of colors in images by mapping pixels to predefined color palettes, creating stylized effects.
 
 ## Features
 
