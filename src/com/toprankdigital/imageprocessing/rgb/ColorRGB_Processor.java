@@ -1,4 +1,4 @@
-package jeanpaul.colores.rgb;
+package com.toprankdigital.imageprocessing.rgb;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
@@ -6,7 +6,7 @@ import java.awt.image.WritableRaster;
 import java.util.Collections;
 import java.util.Vector;
 
-public class ColorRGB_EJB
+public class ColorRGB_Processor
 {
 	private static Vector<ColorRGB_Bean> listaColoresRGB;
 	
@@ -152,12 +152,12 @@ public class ColorRGB_EJB
 		listaColoresRGB.add(new ColorRGB_Bean("FFFFE0", 16777184, "FF", "FF", "E0", 255, 255, 224));
 		listaColoresRGB.add(new ColorRGB_Bean("FFFFF0", 16777200, "FF", "FF", "F0", 255, 255, 240));
 		listaColoresRGB.add(new ColorRGB_Bean("FFFFFF", 16777215, "FF", "FF", "FF", 255, 255, 255));
-	} // Fin del bloque estático.
+	} // Fin del bloque estatico.
 	
 	public static Vector<ColorRGB_Bean> obtenerListaColores()
 	{
 		return listaColoresRGB;
-	} // Fin del método obtenerListaColores.
+	} // Fin del metodo obtenerListaColores.
 	
 	public static double calcularDistanciaEntreColores(ColorRGB_Bean color1, ColorRGB_Bean color2) throws Exception
 	{
@@ -187,7 +187,7 @@ public class ColorRGB_EJB
 		distancia = Math.sqrt(Math.pow(r1 - r2, 2) + Math.pow(g1 - g2, 2) + Math.pow(b1 - b2, 2));
 		
 		return distancia;
-	} // Fin del método calcularDistanciaEntreColores.
+	} // Fin del metodo calcularDistanciaEntreColores.
 	
 	public static ColorRGB_Bean obtenerColorMasCercano(ColorRGB_Bean color, Vector<ColorRGB_Bean> listaColores) throws Exception
 	{
@@ -259,7 +259,7 @@ public class ColorRGB_EJB
 		//System.out.println("colorMasCercano" + ":" + "\n" + colorMasCercano);
 		
 		return colorMasCercano;
-	} // Fin del método obtenerColorMasCercano.
+	} // Fin del metodo obtenerColorMasCercano.
 	
 	public static String enteroEnCadenaHexadecimal(int valorEntrada)
 	{
@@ -271,11 +271,11 @@ public class ColorRGB_EJB
 		} // Fin del if.
 		
 		return valorSalida;
-	} // Fin del método enteroEnCadenaHexadecimal.
+	} // Fin del metodo enteroEnCadenaHexadecimal.
 	
 	public static int cadenaHexadecimalEnEntero(String valorEntrada) throws Exception
 	{
-		if(valorEntrada == null || valorEntrada == "")
+		if(valorEntrada == null || valorEntrada.equals(""))
 		{
 			throw new Exception("Debe indicar el valor de entrada");
 		} // Fin del if.
@@ -285,7 +285,7 @@ public class ColorRGB_EJB
 		valorSalida = Integer.parseInt(valorEntrada, 16);  
 		
 		return valorSalida;
-	} // Fin del método cadenaHexadecimalEnEntero.
+	} // Fin del metodo cadenaHexadecimalEnEntero.
 	
 	public static BufferedImage deepCopy(BufferedImage bi)
 	{
@@ -296,5 +296,5 @@ public class ColorRGB_EJB
 		WritableRaster raster = bi.copyData(null);
 		
 		return new BufferedImage(cm, raster, isAlphaPremultiplied, null);
-	} // Fin del método deepCopy.
-} // Fin de la clase ColorRGB_Bean_EJB.
+	} // Fin del metodo deepCopy.
+} // Fin de la clase ColorRGB_Processor.

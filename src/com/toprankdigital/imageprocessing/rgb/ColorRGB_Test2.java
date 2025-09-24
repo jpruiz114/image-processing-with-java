@@ -1,4 +1,4 @@
-package jeanpaul.colores.rgb;
+package com.toprankdigital.imageprocessing.rgb;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
@@ -42,7 +42,7 @@ public class ColorRGB_Test2
 			listaColores4.add(colorBlanco);
 			listaColores4.add(colorNegro);
 
-			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("assets\\images\\Foto-8.jpg"));
+			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("assets/images/Foto-8.jpg"));
 
 			int wEntrada = imagenEntrada.getWidth();
 			System.out.println("wEntrada" + " = " + wEntrada);
@@ -68,12 +68,12 @@ public class ColorRGB_Test2
 
 			ColorRGB_Bean rgbMasCercano = null;
 
-			BufferedImage img1 = ColorRGB_EJB.deepCopy(imagenEntrada);
-			BufferedImage img2 = ColorRGB_EJB.deepCopy(imagenEntrada);
-			BufferedImage img3 = ColorRGB_EJB.deepCopy(imagenEntrada);
-			BufferedImage img4 = ColorRGB_EJB.deepCopy(imagenEntrada);
+			BufferedImage img1 = ColorRGB_Processor.deepCopy(imagenEntrada);
+			BufferedImage img2 = ColorRGB_Processor.deepCopy(imagenEntrada);
+			BufferedImage img3 = ColorRGB_Processor.deepCopy(imagenEntrada);
+			BufferedImage img4 = ColorRGB_Processor.deepCopy(imagenEntrada);
 
-			// Análisis para la foto [1, 1]
+			// Analisis para la foto [1, 1]
 
 			for (int i=0; i<wEntrada; i++) {
 				for (int j=0; j<hEntrada; j++) {
@@ -83,9 +83,9 @@ public class ColorRGB_Test2
 					numG = (pixelActual >> 8) & 0xff;
 					numB = (pixelActual) & 0xff;
 
-					strR = ColorRGB_EJB.enteroEnCadenaHexadecimal(numR);
-					strG = ColorRGB_EJB.enteroEnCadenaHexadecimal(numG);
-					strB = ColorRGB_EJB.enteroEnCadenaHexadecimal(numB);
+				strR = ColorRGB_Processor.enteroEnCadenaHexadecimal(numR);
+				strG = ColorRGB_Processor.enteroEnCadenaHexadecimal(numG);
+				strB = ColorRGB_Processor.enteroEnCadenaHexadecimal(numB);
 
 					strRGB_Compuesto = strR + strG + strB;
 
@@ -93,13 +93,13 @@ public class ColorRGB_Test2
 
 					rgbActual = new ColorRGB_Bean(strRGB_Compuesto, numRGB_Compuesto, strR, strG, strB, numR, numG, numB);
 
-					rgbMasCercano = ColorRGB_EJB.obtenerColorMasCercano(rgbActual, listaColores1);
+					rgbMasCercano = ColorRGB_Processor.obtenerColorMasCercano(rgbActual, listaColores1);
 
 					raster.setPixel(i, j, new int[]{rgbMasCercano.decR(), rgbMasCercano.decG(), rgbMasCercano.decB()});
 				} // Fin del for.
 			} // Fin del for.
 
-			// Análisis para la foto [1, 2]
+			// Analisis para la foto [1, 2]
 
 			for (int i=0; i<wEntrada; i++) {
 				for (int j=0; j<hEntrada; j++) {
@@ -109,9 +109,9 @@ public class ColorRGB_Test2
 					numG = (pixelActual >> 8) & 0xff;
 					numB = (pixelActual) & 0xff;
 
-					strR = ColorRGB_EJB.enteroEnCadenaHexadecimal(numR);
-					strG = ColorRGB_EJB.enteroEnCadenaHexadecimal(numG);
-					strB = ColorRGB_EJB.enteroEnCadenaHexadecimal(numB);
+				strR = ColorRGB_Processor.enteroEnCadenaHexadecimal(numR);
+				strG = ColorRGB_Processor.enteroEnCadenaHexadecimal(numG);
+				strB = ColorRGB_Processor.enteroEnCadenaHexadecimal(numB);
 
 					strRGB_Compuesto = strR + strG + strB;
 
@@ -119,13 +119,13 @@ public class ColorRGB_Test2
 
 					rgbActual = new ColorRGB_Bean(strRGB_Compuesto, numRGB_Compuesto, strR, strG, strB, numR, numG, numB);
 
-					rgbMasCercano = ColorRGB_EJB.obtenerColorMasCercano(rgbActual, listaColores2);
+					rgbMasCercano = ColorRGB_Processor.obtenerColorMasCercano(rgbActual, listaColores2);
 
 					raster.setPixel(wEntrada + i, j, new int[]{rgbMasCercano.decR(), rgbMasCercano.decG(), rgbMasCercano.decB()});
 				} // Fin del for.
 			} // Fin del for.
 
-			// Análisis para la foto [2, 1]
+			// Analisis para la foto [2, 1]
 
 			for (int i=0; i<wEntrada; i++) {
 				for (int j=0; j<hEntrada; j++) {
@@ -135,9 +135,9 @@ public class ColorRGB_Test2
 					numG = (pixelActual >> 8) & 0xff;
 					numB = (pixelActual) & 0xff;
 
-					strR = ColorRGB_EJB.enteroEnCadenaHexadecimal(numR);
-					strG = ColorRGB_EJB.enteroEnCadenaHexadecimal(numG);
-					strB = ColorRGB_EJB.enteroEnCadenaHexadecimal(numB);
+				strR = ColorRGB_Processor.enteroEnCadenaHexadecimal(numR);
+				strG = ColorRGB_Processor.enteroEnCadenaHexadecimal(numG);
+				strB = ColorRGB_Processor.enteroEnCadenaHexadecimal(numB);
 
 					strRGB_Compuesto = strR + strG + strB;
 
@@ -145,13 +145,13 @@ public class ColorRGB_Test2
 
 					rgbActual = new ColorRGB_Bean(strRGB_Compuesto, numRGB_Compuesto, strR, strG, strB, numR, numG, numB);
 
-					rgbMasCercano = ColorRGB_EJB.obtenerColorMasCercano(rgbActual, listaColores3);
+					rgbMasCercano = ColorRGB_Processor.obtenerColorMasCercano(rgbActual, listaColores3);
 
 					raster.setPixel(i, hEntrada + j, new int[]{rgbMasCercano.decR(), rgbMasCercano.decG(), rgbMasCercano.decB()});
 				} // Fin del for.
 			} // Fin del for.
 
-			// Análisis para la foto [2, 2]
+			// Analisis para la foto [2, 2]
 
 			for (int i=0; i<wEntrada; i++) {
 				for (int j=0; j<hEntrada; j++) {
@@ -161,9 +161,9 @@ public class ColorRGB_Test2
 					numG = (pixelActual >> 8) & 0xff;
 					numB = (pixelActual) & 0xff;
 
-					strR = ColorRGB_EJB.enteroEnCadenaHexadecimal(numR);
-					strG = ColorRGB_EJB.enteroEnCadenaHexadecimal(numG);
-					strB = ColorRGB_EJB.enteroEnCadenaHexadecimal(numB);
+				strR = ColorRGB_Processor.enteroEnCadenaHexadecimal(numR);
+				strG = ColorRGB_Processor.enteroEnCadenaHexadecimal(numG);
+				strB = ColorRGB_Processor.enteroEnCadenaHexadecimal(numB);
 
 					strRGB_Compuesto = strR + strG + strB;
 
@@ -171,17 +171,17 @@ public class ColorRGB_Test2
 
 					rgbActual = new ColorRGB_Bean(strRGB_Compuesto, numRGB_Compuesto, strR, strG, strB, numR, numG, numB);
 
-					rgbMasCercano = ColorRGB_EJB.obtenerColorMasCercano(rgbActual, listaColores4);
+					rgbMasCercano = ColorRGB_Processor.obtenerColorMasCercano(rgbActual, listaColores4);
 
 					raster.setPixel(wEntrada + i, hEntrada + j, new int[]{rgbMasCercano.decR(), rgbMasCercano.decG(), rgbMasCercano.decB()});
 				} // Fin del for.
 			} // Fin del for.
 
-			ImageIO.write(imagenSalida, "jpg", new File("Salida.jpg"));
+			ImageIO.write(imagenSalida, "jpg", new File("output/processed-foto-8-grid.jpg"));
 		} // Fin del try.
 		catch(Exception e)
 		{
 			System.err.println(e.getMessage());
 		} // Fin del catch.
-	} // Fin del mï¿½todo main.
+	} // Fin del metodo main.
 } // Fin de la clase ColorRGB_Test2.

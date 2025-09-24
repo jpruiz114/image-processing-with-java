@@ -1,4 +1,4 @@
-package jeanpaul.colores.rgb;
+package com.toprankdigital.imageprocessing.rgb;
 
 public class ColorRGB_ComparativoBean implements Comparable<ColorRGB_ComparativoBean>
 {
@@ -63,7 +63,7 @@ public class ColorRGB_ComparativoBean implements Comparable<ColorRGB_Comparativo
 		} // Fin del if.
 		
 		return resultadoComparacion;
-	} // Fin del método compareTo.
+	} // Fin del metodo compareTo.
 	
 	public String toString()
 	{
@@ -72,5 +72,5 @@ public class ColorRGB_ComparativoBean implements Comparable<ColorRGB_Comparativo
 		representacionObjeto += "Distancia entre " + "#" + _color1.valorRGB() + " y " + "#" + _color2.valorRGB() + " = " + _distancia;
 		
 		return representacionObjeto;
-	} // Fin del método toString.
+	} // Fin del metodo toString.
 } // Fin de la clase ColorRGB_ComparativoBean.

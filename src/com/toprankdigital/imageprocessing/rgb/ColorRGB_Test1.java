@@ -1,4 +1,4 @@
-package jeanpaul.colores.rgb;
+package com.toprankdigital.imageprocessing.rgb;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
@@ -21,19 +21,19 @@ public class ColorRGB_Test1
 			
 			double distancia = 0;
 			
-			distancia = ColorRGB_EJB.calcularDistanciaEntreColores(color1, color2);
+			distancia = ColorRGB_Processor.calcularDistanciaEntreColores(color1, color2);
 				
 			System.out.println("distancia" + ":" + " " + distancia);
 			
-			Vector<ColorRGB_Bean> listaColoresRGB = ColorRGB_EJB.obtenerListaColores();
+			Vector<ColorRGB_Bean> listaColoresRGB = ColorRGB_Processor.obtenerListaColores();
 			
-			ColorRGB_Bean colorMasCercano = ColorRGB_EJB.obtenerColorMasCercano(color2, listaColoresRGB);
+			ColorRGB_Bean colorMasCercano = ColorRGB_Processor.obtenerColorMasCercano(color2, listaColoresRGB);
 			
 			System.out.println("colorMasCercano" + ":" + "\n" + colorMasCercano);
 			
 			/* **************************************** */
 			
-			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("G:\\Desarrollo\\Java\\PruebasImagenes\\assets\\images\\Lina.jpg"));
+			BufferedImage imagenEntrada = ImageIO.read(new java.io.File("assets/images/Foto-1.jpg"));
 			
 			int w = imagenEntrada.getWidth();
 			int h = imagenEntrada.getHeight();
@@ -68,9 +68,9 @@ public class ColorRGB_Test1
     				numG = (pixelActual >> 8) & 0xff;
     				numB = (pixelActual) & 0xff;
     				
-    				strR = ColorRGB_EJB.enteroEnCadenaHexadecimal(numR);
-    				strG = ColorRGB_EJB.enteroEnCadenaHexadecimal(numG);
-    				strB = ColorRGB_EJB.enteroEnCadenaHexadecimal(numB);
+    				strR = ColorRGB_Processor.enteroEnCadenaHexadecimal(numR);
+    				strG = ColorRGB_Processor.enteroEnCadenaHexadecimal(numG);
+    				strB = ColorRGB_Processor.enteroEnCadenaHexadecimal(numB);
     				
     				strRGB_Compuesto = strR + strG + strB;
     				//System.out.println("strRGB_Compuesto" + " = " + strRGB_Compuesto);
@@ -83,18 +83,18 @@ public class ColorRGB_Test1
     				//System.out.println("(r,g,b) en (i,j)" + " = " + "(" + r + "," + g + "," + b + ")");
     				//System.out.println("(r,g,b) en (i,j)" + " = " + "(" + strR + "," + strG + "," + strB + ")");
     				
-    				rgbMasCercano = ColorRGB_EJB.obtenerColorMasCercano(rgbActual, listaColoresRGB);
+    				rgbMasCercano = ColorRGB_Processor.obtenerColorMasCercano(rgbActual, listaColoresRGB);
     				
     				raster.setPixel(i, j, new int[]{rgbMasCercano.decR(), rgbMasCercano.decG(), rgbMasCercano.decB()});
     			} // Fin del for.
     		} // Fin del for.
             
             // Se guarda la nueva imagen.
-            ImageIO.write(imagenSalida, "jpg", new File("Lina.jpg")); 
+            ImageIO.write(imagenSalida, "jpg", new File("output/processed-foto-1.jpg")); 
 		} // Fin del try.
 		catch(Exception e)
 		{
 			System.err.println(e.getMessage());
 		} // Fin del catch.
-	} // Fin del método main.
+	} // Fin del metodo main.
 } // Fin de la clase ColorRGB_Test1.

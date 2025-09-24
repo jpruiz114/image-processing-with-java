@@ -47,7 +47,7 @@ public class JavaWalkBufferedImageTest1 extends Component
 	{
 		try
 		{
-			BufferedImage image = ImageIO.read(new java.io.File("G:\\Desarrollo\\Java\\PruebasImagenes\\assets\\images\\Sol.gif"));
+			BufferedImage image = ImageIO.read(new java.io.File("assets/images/Foto-3.jpg"));
 			marchThroughImage(image);
 		}
 		catch (IOException e)

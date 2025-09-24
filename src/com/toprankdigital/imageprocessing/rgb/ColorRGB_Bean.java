@@ -1,4 +1,4 @@
-package jeanpaul.colores.rgb;
+package com.toprankdigital.imageprocessing.rgb;
 
 public class ColorRGB_Bean
 {
@@ -42,7 +42,7 @@ public class ColorRGB_Bean
 	
 	public ColorRGB_Bean(String _valorRGB) throws Exception
 	{
-		if(_valorRGB == null || _valorRGB == "")
+		if(_valorRGB == null || _valorRGB.equals(""))
 		{
 			throw new Exception("Debe indicar el valor del color en rgb en formato RRGGBB.");
 		} // Fin del if.
@@ -56,15 +56,15 @@ public class ColorRGB_Bean
 		
 		this._valorRGB = _valorRGB.toUpperCase();
 		
-		_valorDecimal = ColorRGB_EJB.cadenaHexadecimalEnEntero(_valorRGB);
+		_valorDecimal = ColorRGB_Processor.cadenaHexadecimalEnEntero(_valorRGB);
 		
 		_hexR = "" + _valorRGB.charAt(0) + _valorRGB.charAt(1);
 		_hexG = "" + _valorRGB.charAt(2) + _valorRGB.charAt(3);
 		_hexB = "" + _valorRGB.charAt(4) + _valorRGB.charAt(5);
 		
-		_decR = ColorRGB_EJB.cadenaHexadecimalEnEntero(_hexR);
-		_decG = ColorRGB_EJB.cadenaHexadecimalEnEntero(_hexG);
-		_decB = ColorRGB_EJB.cadenaHexadecimalEnEntero(_hexB);
+		_decR = ColorRGB_Processor.cadenaHexadecimalEnEntero(_hexR);
+		_decG = ColorRGB_Processor.cadenaHexadecimalEnEntero(_hexG);
+		_decB = ColorRGB_Processor.cadenaHexadecimalEnEntero(_hexB);
 	} // Fin del constructor de la clase ColorRGB_Bean.
 	
 	/* **************************************** */
@@ -187,7 +187,7 @@ public class ColorRGB_Bean
 		representacionObjeto += "\n";
 		
 		return representacionObjeto;
-	} // Fin del método toString.
+	} // Fin del metodo toString.
 	
 	/* **************************************** */
 } // Fin de la clase ColorRGB_Bean.
