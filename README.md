@@ -14,15 +14,14 @@ A Java-based image processing project that specializes in **color quantization**
 
 ```
 src/
-├── com/
-│   ├── devdaily/imagetests/
-│   │   └── JavaWalkBufferedImageTest1.java    # Basic image pixel analysis
-│   └── toprankdigital/imageprocessing/rgb/
-│       ├── ColorRGB_Bean.java                 # RGB color data model
-│       ├── ColorRGB_Processor.java            # Core processing engine
-│       ├── ColorRGB_ComparativoBean.java      # Color comparison utility
-│       ├── ColorRGB_Test1.java                # Single palette quantization
-│       └── ColorRGB_Test2.java                # Multi-palette grid effects
+├── com/toprankdigital/imageprocessing/
+│   ├── ImagePixelAnalyzer.java                # Basic image pixel analysis utility
+│   └── rgb/
+│       ├── RGBColor.java                      # RGB color data model
+│       ├── ColorProcessor.java                # Core color processing engine
+│       ├── ColorComparison.java               # Color distance comparison utility
+│       ├── ColorQuantizationDemo.java         # Single palette quantization demo
+│       └── MultiPaletteProcessor.java         # Multi-palette grid effects processor
 
 assets/images/                                 # Input images (Foto-1.jpg to Foto-8.jpg)
 output/                                       # Processed output images
@@ -43,8 +42,8 @@ output/                                       # Processed output images
 
 ### Processing Options
 
-- **`ColorRGB_Test1`**: Uses a palette of ~137 predefined colors for standard quantization
-- **`ColorRGB_Test2`**: Creates artistic 2x2 grid effects with custom 3-color palettes per quadrant
+- **`ColorQuantizationDemo`**: Uses a palette of ~137 predefined colors for standard quantization
+- **`MultiPaletteProcessor`**: Creates artistic 2x2 grid effects with custom 3-color palettes per quadrant
 
 ## Usage
 
@@ -52,16 +51,16 @@ output/                                       # Processed output images
 
 ```bash
 # Compile the project (output goes to build/ directory)
-javac -d build src/com/toprankdigital/imageprocessing/rgb/*.java src/com/devdaily/imagetests/*.java
+javac -d build src/com/toprankdigital/imageprocessing/rgb/*.java src/com/toprankdigital/imageprocessing/*.java
 
-# Run standard color quantization
-java -cp build com.toprankdigital.imageprocessing.rgb.ColorRGB_Test1
+# Run color quantization demo
+java -cp build com.toprankdigital.imageprocessing.rgb.ColorQuantizationDemo
 
-# Run multi-palette grid effects
-java -cp build com.toprankdigital.imageprocessing.rgb.ColorRGB_Test2
+# Run multi-palette grid processor
+java -cp build com.toprankdigital.imageprocessing.rgb.MultiPaletteProcessor
 
-# Run pixel analysis utility  
-java -cp build com.devdaily.imagetests.JavaWalkBufferedImageTest1
+# Run image pixel analyzer utility  
+java -cp build com.toprankdigital.imageprocessing.ImagePixelAnalyzer
 ```
 
 ### Input Requirements
@@ -74,9 +73,10 @@ java -cp build com.devdaily.imagetests.JavaWalkBufferedImageTest1
 
 ### Core Classes
 
-- **`ColorRGB_Bean`**: Encapsulates RGB color data with hex/decimal representations
-- **`ColorRGB_Processor`**: Contains the predefined color palette and distance calculation algorithms
-- **`ColorRGB_ComparativoBean`**: Implements `Comparable` for sorting colors by distance
+- **`RGBColor`**: Encapsulates RGB color data with hex/decimal representations and conversion utilities
+- **`ColorProcessor`**: Contains the predefined color palette and distance calculation algorithms
+- **`ColorComparison`**: Implements `Comparable` for sorting colors by distance and comparison operations
+- **`ImagePixelAnalyzer`**: Utility for analyzing individual pixels in images and extracting ARGB values
 
 ### Color Palette
 
@@ -106,4 +106,4 @@ The processing creates stylized, poster-like effects by limiting the color palet
 
 ## Author
 
-Created by Jean Paul for exploring color quantization techniques and artistic image processing in Java.
+A professional Java implementation demonstrating color quantization techniques and artistic image processing algorithms.
