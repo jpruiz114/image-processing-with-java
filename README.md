@@ -24,7 +24,7 @@ src/
 │       └── MultiPaletteProcessor.java         # Multi-palette grid effects processor
 
 assets/images/                                 # Input images (Foto-1.jpg to Foto-8.jpg)
-output/                                       # Processed output images
+output/                                        # Processed output images
 ```
 
 ## How It Works
